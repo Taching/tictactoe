@@ -51,8 +51,8 @@ class App extends Component {
     });
   }
   onPressCreate = e => {
-    this.roomID = shortid.generate().substring(0, 5);
-    this.lobbyChannel = "tictactoelobbby--" + this.roomId;
+    this.roomId = shortid.generate().substring(0, 5);
+    this.lobbyChannel = "tictactoelobby--" + this.roomId;
 
     this.pubnub.subscribe({
       channels: [this.lobbyChannel],
@@ -154,6 +154,23 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       });
+  };
+  endGame = () => {
+    this.setState({
+      piece: "",
+      isPlaying: false,
+      isRoomCreator: false,
+      isDisabled: false,
+      myTurn: false
+    });
+
+    this.lobbyChannel = null;
+    this.gameChannel = null;
+    this.roomId = null;
+
+    this.pubnub.unsubscribe({
+      channels: [this.lobbyChannel, this.gameChannel]
+    });
   };
 
   render() {

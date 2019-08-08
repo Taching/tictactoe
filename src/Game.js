@@ -137,22 +137,7 @@ class Game extends React.Component {
       });
     }
   };
-  endGame = () => {
-    this.setState({
-      piece: "",
-      isPlaying: false,
-      isRoomCreator: false,
-      isDisabled: false,
-      myTurn: false
-    });
-    this.lobbyChannel = null;
-    this.gameChannel = null;
-    this.roomId = null;
 
-    this.pubnub.unsubscribe({
-      channels: [this.lobbyChannel, this.gameChannel]
-    });
-  };
   onMakeMove = index => {
     const squares = this.state.squares;
 
