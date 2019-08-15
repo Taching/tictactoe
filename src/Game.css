@@ -20,10 +20,10 @@ body {
     color: rgb(208,33,41);
   }
 
-  .board {
+  .board {color: rgb(208,33,41);
     display: flex;
     flex-direction: row;
-    width: 16.5em;
+    margin: 0 auto;
   }
 
   .title {
@@ -38,7 +38,7 @@ body {
   }
 
   .button-container {
-    margin-left: 1em;
+    margin-top: 2em;
   }
 
   .board-row:after {
@@ -93,6 +93,7 @@ body {
     margin-right: 5px;
     width: 4.5em;
     height: 2.0em;
+    color: rgb(208,33,41);
   }
 
   .join-button {
