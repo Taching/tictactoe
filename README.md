@@ -1,8 +1,10 @@
 # TICTACTOE Multiplayer
 Using PubNub API to allow two players to play against one another in realtime.
-# To START
 
+# To START
+## player 1
 To Create the room: by clicking CREATE button
+## player 2
 To JOIN: input the generated ID from Create Button
 
 ## Deployment
